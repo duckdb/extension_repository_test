@@ -63,12 +63,12 @@ std::string QuackTestExtension::Version() const {
 
 extern "C" {
 
-DUCKDB_EXTENSION_API void quack_init(duckdb::DatabaseInstance &db) {
+DUCKDB_EXTENSION_API void quack_test_init(duckdb::DatabaseInstance &db) {
     duckdb::DuckDB db_wrapper(db);
     db_wrapper.LoadExtension<duckdb::QuackTestExtension>();
 }
 
-DUCKDB_EXTENSION_API const char *quack_version() {
+DUCKDB_EXTENSION_API const char *quack_test_version() {
 	return duckdb::DuckDB::LibraryVersion();
 }
 }
